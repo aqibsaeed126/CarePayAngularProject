@@ -1,0 +1,27 @@
+<h3>Treatment List</h3>
+
+<nav class="navbar">
+  <input class="form-control" type="text" name="treatmentCode" [(ngModel)]="treatmentCode" (ngModelChange)="DebouceSearch()"
+    placeholder="Enter treatment Code to Search" />
+</nav>
+<div *ngIf="!isValidCode"class="col-sm-3">
+  <small id="passwordHelp" class="text-danger">
+    Invalid Code Search
+  </small>      
+</div>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Treatment Code</th>
+      <th>Patient</th>
+      <th>Treatment Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let treatment of tempTreatments">
+      <td>{{treatment.treatmentCode}}</td>
+      <td>{{treatment.patient}}</td>
+      <td>{{treatment.treatmentDate | date:'medium'}}</td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,1 @@
+export const TREATMENT_URL = 'http://localhost:3000/treatments';
